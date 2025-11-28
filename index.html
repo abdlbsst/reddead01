@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecting...</title>
+  <style>
+    body {
+      background-color: white;
+      color: #222;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      flex-direction: column;
+      text-align: center;
+    }
+    h1 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+    #countdown {
+      font-weight: bold;
+      font-size: 26px;
+      color: #0078ff;
+    }
+  </style>
+</head>
+<body>
+  <h1>Please wait... redirecting to your offer 🔗</h1>
+  <div>Redirecting in <span id="countdown">3</span> seconds</div>
+
+  <script>
+    let timeLeft = 3; // عدد الثواني قبل التوجيه
+    const countdown = document.getElementById("countdown");
+    const redirectUrl = "https://smrturl.co/a/s561605968b/62?s1=";
+
+    const timer = setInterval(() => {
+      timeLeft--;
+      countdown.textContent = timeLeft;
+      if (timeLeft <= 0) {
+        clearInterval(timer);
+        window.location.href = redirectUrl;
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
